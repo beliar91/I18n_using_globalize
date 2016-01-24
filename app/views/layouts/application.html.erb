@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RailsWeekend4Internacjonalizacja</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="nav">
+  Language:
+    <%= link_to_unless I18n.locale == :en, "English", locale: "en" %>
+    <%= link_to_unless I18n.locale == :pl, "Polish", locale: "pl" %>
+    <%= link_to_unless I18n.locale == :de, "DEUTSHLAND UBER ALLES", locale: "de" %>
+</div>
+
+<%= yield %>
+
+</body>
+</html>
